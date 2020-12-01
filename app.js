@@ -5,7 +5,6 @@ async function getWeather(cityName){
         const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${cityName}`, {mode: 'cors'})
         const data = await response.json();
         const weather = { temp: `${data.current.temp_c}°`, humidity: `${data.current.humidity}%` ,country: data.location.country, city: data.location.name};
-        console.log(data);
         return weather;
     } catch (error) {
         console.log(error);
@@ -13,7 +12,12 @@ async function getWeather(cityName){
 }
 
 function displayinfo(info){
+    if(contDiv.lastChild.className == 'infoDiv'){// didn't work :c
+        contDiv.removeChild(contDiv.lastChild);
+    }
+
     const infoDiv = document.createElement('div');
+    infoDiv.className = 'infoDiv';
     infoDiv.innerText = `Location: ${info.city}, ${info.country} \n Temp: ${info.temp} \n Humidity: ${info.humidity}`;
     contDiv.appendChild(infoDiv);
 }
@@ -34,7 +38,7 @@ function displayForm(){
         let city = document.getElementById('cityInput').value;
         if (city != undefined && city != ''){
             getWeather(city).then( (res) =>{
-                console.log(res);
+                // console.log(res);
                 displayinfo(res);
             });
         }
