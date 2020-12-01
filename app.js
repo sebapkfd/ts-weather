@@ -23,11 +23,15 @@ function displayinfo(info){
 }
 
 function displayForm(){
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'titleDiv';
+    titleDiv.innerText = 'Weather'
+
     const formDiv = document.createElement('div');
     formDiv.setAttribute('id', 'formDiv')
     
-    let titleLabel = document.createElement('label');
-    titleLabel.innerText = 'Enter city';
+    let inputLabel = document.createElement('label');
+    inputLabel.innerText = 'Enter city';
 
     let cityInput = document.createElement('input');
     cityInput.setAttribute('id', 'cityInput');
@@ -35,7 +39,8 @@ function displayForm(){
     let inputButton = document.createElement('button');
     inputButton.innerText = 'Search';
 
-    formDiv.appendChild(titleLabel);
+    contDiv.appendChild(titleDiv);
+    formDiv.appendChild(inputLabel);
     formDiv.appendChild(cityInput);
     formDiv.appendChild(inputButton);
     contDiv.appendChild(formDiv);
