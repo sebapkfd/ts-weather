@@ -12,7 +12,7 @@ async function getWeather(cityName){
 }
 
 function displayinfo(info){
-    if(contDiv.lastChild.className == 'infoDiv'){// didn't work :c
+    if(contDiv.lastChild.className == 'infoDiv'){
         contDiv.removeChild(contDiv.lastChild);
     }
 
@@ -31,23 +31,30 @@ function displayForm(){
 
     let cityInput = document.createElement('input');
     cityInput.setAttribute('id', 'cityInput');
-
+    
     let inputButton = document.createElement('button');
     inputButton.innerText = 'Search';
-    inputButton.addEventListener('click', () =>{
-        let city = document.getElementById('cityInput').value;
-        if (city != undefined && city != ''){
-            getWeather(city).then( (res) =>{
-                // console.log(res);
-                displayinfo(res);
-            });
-        }
-    })
 
     formDiv.appendChild(titleLabel);
     formDiv.appendChild(cityInput);
     formDiv.appendChild(inputButton);
     contDiv.appendChild(formDiv);
+
+    inputButton.addEventListener('click', () =>{
+        let city = document.getElementById('cityInput').value;
+        if (city != undefined && city != ''){
+            getWeather(city).then( (res) =>{
+                displayinfo(res);
+            });
+        }
+    })
+
+    cityInput.addEventListener('keyup', (event)=>{
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            inputButton.click();
+        }
+    });
 }
 
 
