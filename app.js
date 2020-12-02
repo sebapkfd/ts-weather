@@ -8,7 +8,7 @@ function date(dateStr){
 async function getWeather(cityName){
     try {
         const response = await fetch(
-            `http://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${cityName}`, 
+            `https://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${cityName}`, 
             {mode: 'cors'})
         const data = await response.json();
         console.log(data);
