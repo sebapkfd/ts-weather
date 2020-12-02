@@ -2,7 +2,9 @@ const contDiv = document.getElementById('content');
 
 async function getWeather(cityName){
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${cityName}`, {mode: 'cors'})
+        const response = await fetch(
+            `http://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${cityName}`, 
+            {mode: 'cors'})
         const data = await response.json();
         const weather = { temp: `${data.current.temp_c}°`, humidity: `${data.current.humidity}%` ,country: data.location.country, city: data.location.name};
         return weather;
@@ -29,35 +31,21 @@ function displayForm(){
 
     const formDiv = document.createElement('div');
     formDiv.setAttribute('id', 'formDiv')
-    
-    let inputLabel = document.createElement('label');
-    inputLabel.innerText = 'Enter city';
 
     let cityInput = document.createElement('input');
     cityInput.setAttribute('id', 'cityInput');
-    
-    let inputButton = document.createElement('button');
-    inputButton.innerText = 'Search';
+    cityInput.setAttribute('placeholder', 'Enter city')
 
     contDiv.appendChild(titleDiv);
-    formDiv.appendChild(inputLabel);
     formDiv.appendChild(cityInput);
-    formDiv.appendChild(inputButton);
     contDiv.appendChild(formDiv);
 
-    inputButton.addEventListener('click', () =>{
+    cityInput.addEventListener('keyup', (event)=>{
         let city = document.getElementById('cityInput').value;
-        if (city != undefined && city != ''){
+        if(event.key === 'Enter' && city != undefined && city != ''){
             getWeather(city).then( (res) =>{
                 displayinfo(res);
             });
-        }
-    })
-
-    cityInput.addEventListener('keyup', (event)=>{
-        if(event.key === 'Enter'){
-            event.preventDefault();
-            inputButton.click();
         }
     });
 }
