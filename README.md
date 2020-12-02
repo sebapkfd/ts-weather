@@ -9,3 +9,4 @@ Small project, built for assignment as part of the curriculum for [The Odin Proj
 * CSS
 * HTML
 * Git
+* [Weather API](https://www.weatherapi.com/)
