@@ -15,8 +15,6 @@ body{
 }
 
 .titleDiv{
-    /* background-color: rgb(121, 20, 20); */
-    /* color: rgb(27, 28, 31); */
     color: white;
     display: flex;
     justify-content: center;
@@ -25,12 +23,11 @@ body{
 }
 
 .infoDiv{
-    background-color: rgb(27, 28, 31);
+    /* background-color: rgb(27, 28, 31); */
     color: rgb(255, 255, 255);
 }
 
 #formDiv{
-    /* background-color: rgb(115, 107, 228); */
     height: 2.5rem;
     display: flex;
     margin: 1rem auto;
@@ -58,4 +55,29 @@ button:hover{
     border-radius: 5px;
     border: none;
     padding-left: 0.5rem;
+}
+
+#locationDiv{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+#timeDiv, #conditionDiv, #humidityDiv, #feelsLikeDiv{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 2%;
+}
+
+#tempIconDiv{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    padding: 1rem;
+    align-items: center;
+    font-size: 2.8rem;
+}
+
+#tempDiv{
 }

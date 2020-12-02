@@ -1,6 +1,9 @@
 const contDiv = document.getElementById('content');
 
-
+function date(dateStr){
+    let aux = dateStr.split(/\D/g);
+    return [aux[2],aux[1],aux[0] ].join("-");
+};
 
 async function getWeather(cityName){
     try {
@@ -9,6 +12,7 @@ async function getWeather(cityName){
             {mode: 'cors'})
         const data = await response.json();
         console.log(data);
+        const tiemInfo = data.location.localtime.split(' ');
         const weather = { 
             temp: `${data.current.temp_c}°`,
             condition: data.current.condition.text,
@@ -17,7 +21,8 @@ async function getWeather(cityName){
             city: data.location.name,
             feelsLike: `${data.current.feelslike_c}°`,
             icon: `http:${data.current.condition.icon}`,
-            dateTime: data.location.localtime
+            currentDate: date(tiemInfo[0]),
+            currentTime: tiemInfo[1]
         };
         console.log(weather);
         return weather;
@@ -38,6 +43,13 @@ function displayinfo(info){
     locationDiv.setAttribute('id', 'locationDiv');
     locationDiv.innerText = `${info.city}, ${info.country}`;
 
+    const timeDiv = document.createElement('dov');
+    timeDiv.setAttribute('id', 'timeDiv');
+    timeDiv.innerText = `${info.currentDate} ${info.currentTime}`;
+
+    const tempIconDiv = document.createElement('div');
+    tempIconDiv.setAttribute('id', 'tempIconDiv');
+
     const iconDiv = document.createElement('div');
     iconDiv.setAttribute('id', 'iconDiv');
 
@@ -48,6 +60,10 @@ function displayinfo(info){
     tempDiv.setAttribute('id', 'tempDiv');
     tempDiv.innerText = `${info.temp}`;
 
+    const conditionDiv = document.createElement('div');
+    conditionDiv.setAttribute('id','conditionDiv');
+    conditionDiv.innerText = `${info.condition}`;
+
     const humidityDiv = document.createElement('div');
     humidityDiv.setAttribute('id', 'humidityDiv');
     humidityDiv.innerText = `Humidity: ${info.humidity}`;
@@ -57,9 +73,12 @@ function displayinfo(info){
     feelsLikeDiv.innerText = `Feels like: ${info.feelsLike}`;
 
     infoDiv.appendChild(locationDiv);
+    infoDiv.appendChild(timeDiv);
     iconDiv.appendChild(img);
-    infoDiv.appendChild(iconDiv);
-    infoDiv.appendChild(tempDiv);
+    tempIconDiv.appendChild(iconDiv);
+    tempIconDiv.appendChild(tempDiv);
+    infoDiv.appendChild(tempIconDiv);
+    infoDiv.appendChild(conditionDiv);
     infoDiv.appendChild(humidityDiv);
     infoDiv.appendChild(feelsLikeDiv);
     contDiv.appendChild(infoDiv);
