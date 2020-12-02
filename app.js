@@ -11,7 +11,6 @@ async function getWeather(cityName){
             `https://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${cityName}`, 
             {mode: 'cors'})
         const data = await response.json();
-        console.log(data);
         const tiemInfo = data.location.localtime.split(' ');
         const weather = { 
             temp: `${data.current.temp_c}°`,
@@ -24,7 +23,6 @@ async function getWeather(cityName){
             currentDate: date(tiemInfo[0]),
             currentTime: tiemInfo[1]
         };
-        console.log(weather);
         return weather;
     } catch (error) {
         console.log(error);
@@ -109,6 +107,5 @@ function displayForm(){
         }
     });
 }
-
 
 displayForm();
