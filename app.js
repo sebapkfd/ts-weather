@@ -20,7 +20,7 @@ async function getWeather(cityName){
             country: data.location.country,
             city: data.location.name,
             feelsLike: `${data.current.feelslike_c}°`,
-            icon: `http:${data.current.condition.icon}`,
+            icon: `https:${data.current.condition.icon}`,
             currentDate: date(tiemInfo[0]),
             currentTime: tiemInfo[1]
         };
