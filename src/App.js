@@ -17,13 +17,13 @@ function App() {
       const data = await response.json();
       const infoTime = data.location.localtime.split(' ');
       const weather = {
-        temp: `${data.current.temp_c}°`,
+        temp: `${data.current.temp_c}° C`,
         condition: data.current.condition.text,
         humidity: `${data.current.humidity}%`,
         wind: `${data.current.wind_kph} Km/h`,
         country: data.location.country,
         city: data.location.name,
-        feelsLike: `${data.current.feelslike_c}°`,
+        feelsLike: `${data.current.feelslike_c}° C`,
         icon: `https:${data.current.condition.icon}`,
         currentDate: dateFormat(infoTime[0]),
         currentTime: infoTime[1]
