@@ -5,14 +5,23 @@ const Info = (props) => {
     if(weather.temp) {
         return (
             <div className="info">
-                <h3>{weather.temp}</h3>
-                <h3>{weather.condition}</h3>
-                <h3>{weather.humidity}</h3>
-                <h3>{weather.country}</h3>
-                <h3>{weather.city}</h3>
-                <h3>{weather.feelsLike}</h3>
-                <h3>{weather.currentDate}</h3>
-                <h3>{weather.currentTime}</h3>
+                <div>
+                    <h3>{weather.city}</h3>
+                    <h3>{weather.country}</h3>
+                    <h3>{weather.currentDate}</h3>
+                </div>
+                <div>
+                    <img src={weather.icon} alt="icon"/>
+                    <h3>{weather.temp}</h3>
+                    <h3>{weather.condition}</h3>
+                </div>
+                <div>
+                    <h3>{weather.humidity}</h3>
+                    <h3>{weather.wind}</h3>
+                </div>
+                <div>
+                    <h3>{weather.feelsLike}</h3>
+                </div>
             </div>
         )
     } else {

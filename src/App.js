@@ -15,20 +15,21 @@ function App() {
           `https://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${location}`, 
           {mode: 'cors'})
       const data = await response.json();
-        const infoTime = data.location.localtime.split(' ');
-        const weather = { 
-            temp: `${data.current.temp_c}°`,
-            condition: data.current.condition.text,
-            humidity: `${data.current.humidity}%`,
-            country: data.location.country,
-            city: data.location.name,
-            feelsLike: `${data.current.feelslike_c}°`,
-            icon: `https:${data.current.condition.icon}`,
-            currentDate: dateFormat(infoTime[0]),
-            currentTime: infoTime[1]
+      const infoTime = data.location.localtime.split(' ');
+      const weather = {
+        temp: `${data.current.temp_c}°`,
+        condition: data.current.condition.text,
+        humidity: `${data.current.humidity}%`,
+        wind: `${data.current.wind_kph} Km/h`,
+        country: data.location.country,
+        city: data.location.name,
+        feelsLike: `${data.current.feelslike_c}°`,
+        icon: `https:${data.current.condition.icon}`,
+        currentDate: dateFormat(infoTime[0]),
+        currentTime: infoTime[1]
         };
-        console.log(weather);
-        setReport(weather)
+      console.log(weather);
+      setReport(weather)
     } catch (error) {
         console.log(error);
     }

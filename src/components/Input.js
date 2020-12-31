@@ -14,6 +14,7 @@ const Input = (props) => {
             <input
                 type="text"
                 name="location"
+                placeholder="Search"
             />
         </form>
     </div>
