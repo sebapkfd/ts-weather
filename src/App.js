@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Title from './components/Title';
+import Input from './components/Input';
 import Info from './components/Info';
 import dateFormat from './components/dateFormat';
 
@@ -35,7 +36,8 @@ function App() {
 
   return (
     <div className="App">
-      <Title handleSubmit={getWeather}/>
+      <Title/>
+      <Input handleSubmit={getWeather}/>
       <Info weather={report}/>
     </div>
   );

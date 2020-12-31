@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Info = (props) => {
-
     const {weather} = props;
     if(weather.temp) {
         return (
@@ -19,7 +18,6 @@ const Info = (props) => {
     } else {
         return null;
     }
-    
 }
 
 export default Info;
