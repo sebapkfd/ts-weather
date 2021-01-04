@@ -45,7 +45,6 @@ input:focus{
 }
 
 .App {
-  /* width: 29vw; */
   width: 536px;
 }
 
@@ -58,6 +57,7 @@ input:focus{
 .info {
   background-color: #E4EDF0;
   border-radius: 20px;
+  box-shadow: 2px 5px 4px #00000059;
   opacity: 1;
   padding-top: 18px;
   padding-bottom: 25px;
@@ -66,12 +66,12 @@ input:focus{
 h3 {
   margin: 0;
   color: #061263;
+  font-weight: 300;
 }
 
 .place-date {
   display: flex;
   justify-content: space-around;
-  /* margin-bottom: 32px; */
 }
 
 .icon-temp-condition {
