@@ -46,6 +46,8 @@ input:focus{
 
 .App {
   width: 536px;
+  display: flex;
+  flex-direction: column;
 }
 
 .input {
@@ -103,4 +105,16 @@ h3 {
   display: flex;
   justify-content: center;
   margin-top: 25px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  height: 50px;
+}
+
+#Repo {
+  height: 4vh;
 }

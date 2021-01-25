@@ -4,6 +4,7 @@ import Title from './components/Title';
 import Input from './components/Input';
 import Info from './components/Info';
 import dateFormat from './components/dateFormat';
+import Footer from './components/Footer';
 
 function App() {
   const [report, setReport] = useState({});
@@ -40,6 +41,7 @@ function App() {
       <Title/>
       <Input handleSubmit={getWeather}/>
       <Info weather={report}/>
+      <Footer/>
     </div>
   );
 }
