@@ -8,6 +8,11 @@ import Footer from './components/Footer';
 
 function App() {
   const [report, setReport] = useState({});
+  const [tempType, setTempType] = useState('C');
+
+  const changeTempType = () => {
+    (tempType === 'C') ? setTempType('F') : setTempType ('C');
+  }
 
   const getWeather = async (e) => {
     const location = e.target.location.value;
@@ -18,13 +23,15 @@ function App() {
       const data = await response.json();
       const infoTime = data.location.localtime.split(' ');
       const weather = {
-        temp: `${data.current.temp_c}° C`,
+        tempC: `${data.current.temp_c}° C`,
+        tempF: `${data.current.temp_f}° F`,
         condition: data.current.condition.text,
         humidity: `${data.current.humidity}%`,
         wind: `${data.current.wind_kph} Km/h`,
         country: data.location.country,
         city: data.location.name,
-        feelsLike: `${data.current.feelslike_c}° C`,
+        feelsLikeC: `${data.current.feelslike_c}° C`,
+        feelsLikeF: `${data.current.feelslike_f}° F`,
         icon: `https:${data.current.condition.icon}`,
         currentDate: dateFormat(infoTime[0]),
         currentTime: infoTime[1]
@@ -39,8 +46,8 @@ function App() {
   return (
     <div className="App">
       <Title/>
-      <Input handleSubmit={getWeather}/>
-      <Info weather={report}/>
+      <Input handleSubmit={getWeather} handleType={changeTempType} tempType={tempType}/>
+      <Info weather={report} opt={tempType}/>
       <Footer/>
     </div>
   );

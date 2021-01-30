@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Info = (props) => {
-    const {weather} = props;
+    const {weather, opt} = props;
 
     let place;
     if(weather.country === 'United States of America') {
@@ -10,7 +10,10 @@ const Info = (props) => {
         place = <h3>{weather.city} - {weather.country}</h3>
     }
 
-    if(weather.temp) {
+    let temp = (opt === 'C') ? weather.tempC : weather.tempF;
+    let feelsLike = (opt === 'C') ? weather.feelsLikeC : weather.feelsLikeF;
+
+    if(weather.city) {
         return (
             <div className="info">
                 <div className="place-date">
@@ -26,7 +29,7 @@ const Info = (props) => {
                         <img src={weather.icon} alt="icon"/>
                     </div>
                     <div className="temp-condition">
-                        <h2 id="temp">{weather.temp}</h2>
+                        <h2 id="temp">{temp}</h2>
                         <h3>{weather.condition}</h3>
                     </div>
                 </div>
@@ -35,7 +38,7 @@ const Info = (props) => {
                     <h3>Wind: {weather.wind}</h3>
                 </div>
                 <div className="feels-like">
-                    <h3>Feels like: {weather.feelsLike}</h3>
+                    <h3>Feels like: {feelsLike}</h3>
                 </div>
             </div>
         )

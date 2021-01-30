@@ -1,16 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const Input = (props) => {
-    const {handleSubmit} = props;
-    const [tempType, setTempType] = useState('C');
-
+    const {handleSubmit, handleType, tempType} = props;
+    
     const submitLocation = (e) => {
         e.preventDefault();
         handleSubmit(e);
-    }
-
-    const changeTempType = () => {
-        (tempType === 'C') ? setTempType('F') : setTempType ('C');
     }
 
     return (
@@ -24,7 +19,7 @@ const Input = (props) => {
                 />
             </form>
         </div>
-        <button onClick={changeTempType}>
+        <button onClick={handleType}>
             {tempType}
         </button>
     </div>
