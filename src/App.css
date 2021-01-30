@@ -66,6 +66,18 @@ input:focus{
 button {
   align-self: center;
   margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #E4EDF0;
+  color: #061263;
+  outline: none;
+  transition: 0.4s;
+  width: 25px;
+}
+
+button:hover {
+  background-color: #8EADB9;
+  color: #E4EDF0;
 }
 
 .info {
