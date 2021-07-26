@@ -9,6 +9,9 @@ const Info = (props) => {
     } 
     else if (weather.country === 'United Kingdom') {
         place = <h3>{weather.city} - UK</h3>
+    } 
+    else if (weather.country === 'United Arab Emirates') {
+        place = <h3>{weather.city} - UAE</h3>
     }
     else {
         place = <h3>{weather.city} - {weather.country}</h3>
