@@ -11,30 +11,6 @@ body {
   margin: 0;
 }
 
-h1 {
-  text-align: center;
-  font-weight: 300;
-  color: #FFFFFF;
-}
-
-input {
-  background-color: #E4EDF0C1;
-  height: 25px;
-  border-radius: 25px;
-  width: 100%;
-  border: none;
-  text-align: center;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 25px;
-  opacity: 1;
-  color: #979797;
-}
-
-input:focus{
-  outline: none;
-  background-color: #E4EDF0C1;
-}
-
 #root {
   background-color: #8EADB9;
   width: 100%;
@@ -50,13 +26,43 @@ input:focus{
   flex-direction: column;
 }
 
-.options {
+h1 {
+  text-align: center;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+h3 {
+  margin: 0;
+  color: #061263;
+  font-weight: 300;
+}
+
+input {
+  background-color: #E4EDF0C1;
+  height: 25px;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 25px;
+  opacity: 1;
+  color: #979797;
+  justify-self: center;
+}
+
+input:focus {
+  outline: none;
+  background-color: #E4EDF0C1;
+}
+
+.search-options {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.input {
+form {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -90,11 +96,6 @@ button:hover {
   padding-bottom: 25px;
 }
 
-h3 {
-  margin: 0;
-  color: #061263;
-  font-weight: 300;
-}
 
 .place-date {
   display: flex;

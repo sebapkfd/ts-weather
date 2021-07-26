@@ -9,8 +9,7 @@ const Input = (props) => {
     }
 
     return (
-    <div className='options'>
-        <div className="input">
+        <div className='search-options'>
             <form onSubmit={submitLocation}>
                 <input
                     type="text"
@@ -18,11 +17,10 @@ const Input = (props) => {
                     placeholder="Search"
                 />
             </form>
+            <button onClick={handleType}>
+                {tempType}
+            </button>
         </div>
-        <button onClick={handleType}>
-            {tempType}
-        </button>
-    </div>
     )
 }
 
