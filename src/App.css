@@ -1,5 +1,5 @@
 html {
-  background-color: #8FFFBC;
+  background-color: var(--lime);
   font-family: Verdana, sans-serif;
 }
 
@@ -11,8 +11,18 @@ body {
   margin: 0;
 }
 
+:root {
+  --background: #8EADB9;
+  --white: #FFFFFF;
+  --deep-blue: #061263;
+  --gray: #E4EDF0C1;
+  --gray-text: #979797;
+  --lime: #8FFFBC;
+  --shadow: 0px 3px 6px #00000029;
+}
+
 #root {
-  background-color: #8EADB9;
+  background-color: var(--background);
   width: 100%;
   margin-top: 9vh;
   height: 91vh;
@@ -29,31 +39,31 @@ body {
 h1 {
   text-align: center;
   font-weight: 300;
-  color: #FFFFFF;
+  color: var(--white);
 }
 
 h3 {
   margin: 0;
-  color: #061263;
+  color: var(--deep-blue);
   font-weight: 300;
 }
 
 input {
-  background-color: #E4EDF0C1;
+  background-color: var(--gray);
   height: 25px;
   border-radius: 25px;
   border: none;
   text-align: center;
-  box-shadow: 0px 3px 6px #00000029;
+  box-shadow: var(--shadow);
   border-radius: 25px;
   opacity: 1;
-  color: #979797;
+  color: var(--gray-text);
   justify-self: center;
 }
 
 input:focus {
   outline: none;
-  background-color: #E4EDF0C1;
+  background-color: var(--gray);
 }
 
 .search-options {
@@ -74,28 +84,27 @@ button {
   margin-bottom: 20px;
   border: none;
   border-radius: 6px;
-  background-color: #E4EDF0;
-  color: #061263;
+  background-color: var(--gray);
+  color: var(--deep-blue);
   outline: none;
   transition: 0.4s;
   width: 25px;
-  box-shadow: 0px 3px 6px #00000029;
+  box-shadow: var(--shadow);
 }
 
 button:hover {
-  background-color: #8EADB9;
-  color: #E4EDF0;
+  background-color: var(--background);
+  color: var(--gray);
 }
 
 .info {
-  background-color: #E4EDF0;
+  background-color: var(--gray);
   border-radius: 20px;
-  box-shadow: 2px 5px 4px #00000059;
+  box-shadow: var(--shadow);
   opacity: 1;
   padding-top: 18px;
   padding-bottom: 25px;
 }
-
 
 .place-date {
   display: flex;
@@ -118,7 +127,7 @@ button:hover {
 
 #temp {
   margin: 0px;
-  color: #061263;
+  color: var(--deep-blue);
   font-weight: 300;
 }
 

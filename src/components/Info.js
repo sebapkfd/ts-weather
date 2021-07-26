@@ -4,9 +4,13 @@ const Info = (props) => {
     const {weather, opt} = props;
 
     let place;
-    if(weather.country === 'United States of America') {
+    if (weather.country === 'United States of America') {
         place = <h3>{weather.city} - USA</h3>
-    } else {
+    } 
+    else if (weather.country === 'United Kingdom') {
+        place = <h3>{weather.city} - UK</h3>
+    }
+    else {
         place = <h3>{weather.city} - {weather.country}</h3>
     }
 
@@ -42,9 +46,8 @@ const Info = (props) => {
                 </div>
             </div>
         )
-    } else {
-        return null;
     }
+    return null
 }
 
 export default Info;
