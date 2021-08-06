@@ -142,7 +142,7 @@ button:hover {
   margin-top: 25px;
 }
 
-.footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,6 +150,6 @@ button:hover {
   height: 50px;
 }
 
-#Repo {
+#repo {
   height: 4vh;
 }
