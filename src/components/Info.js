@@ -1,19 +1,8 @@
 import React from 'react';
+import placeFormat from '../services/placeFormat';
 
 const Info = ({ weather, opt }) => {
-    let place;
-    if (weather.country === 'United States of America') {
-        place = <h3>{weather.city} - USA</h3>
-    } 
-    else if (weather.country === 'United Kingdom') {
-        place = <h3>{weather.city} - UK</h3>
-    } 
-    else if (weather.country === 'United Arab Emirates') {
-        place = <h3>{weather.city} - UAE</h3>
-    }
-    else {
-        place = <h3>{weather.city} - {weather.country}</h3>
-    }
+    const place = placeFormat(weather);
 
     let temp = (opt === 'C') ? weather.tempC : weather.tempF;
     let feelsLike = (opt === 'C') ? weather.feelsLikeC : weather.feelsLikeF;

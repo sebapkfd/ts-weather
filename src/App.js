@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import './App.css';
 import Title from './components/Title';
 import Input from './components/Input';
 import Info from './components/Info';
-import Weather from './components/Weather';
 import Footer from './components/Footer';
+import getData from './services/getData';
+import './App.css';
 
 function App() {
   const [report, setReport] = useState({});
@@ -16,7 +16,7 @@ function App() {
 
   const getWeather = async (e) => {
     try {
-      let newReport = await Weather(e);
+      let newReport = await getData(e);
       setReport(newReport)
     }
     catch (error) {

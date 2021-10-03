@@ -1,6 +1,6 @@
 import dateFormat from './dateFormat';
 
-const Weather = async (e) => {
+const getData = async (e) => {
     const location = e.target.location.value;
     try {
         const response = await fetch(
@@ -29,4 +29,4 @@ const Weather = async (e) => {
     }
 }
 
-export default Weather;
+export default getData;
