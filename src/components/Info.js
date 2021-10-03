@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Info = (props) => {
-    const {weather, opt} = props;
-
+const Info = ({ weather, opt }) => {
     let place;
     if (weather.country === 'United States of America') {
         place = <h3>{weather.city} - USA</h3>

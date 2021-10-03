@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Input = (props) => {
-    const {handleSubmit, handleType, tempType} = props;
+const Input = ({ handleSubmit, handleType, tempType }) => {
     
     const submitLocation = (e) => {
         e.preventDefault();
