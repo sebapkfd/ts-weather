@@ -1,21 +1,12 @@
-const placeFormat = (weather) => {
-    const {city, country} = weather;
-
-    let place;
-    if (country === 'United States of America') {
-        place = <h3>{city} - USA</h3>
-    } 
-    else if (country === 'United Kingdom') {
-        place = <h3>{city} - UK</h3>
-    } 
-    else if (country === 'United Arab Emirates') {
-        place = <h3>{city} - UAE</h3>
+const placeFormat = ({city, country}) => {
+    if (country.length >= 14) {
+        let matches = country.replace(' of ', ' ').match(/\b(\w)/g);
+        let acronym = matches.join('').toUpperCase();
+        return (
+            <h3>{city} - {acronym}</h3>
+        )
     }
-    else {
-        place = <h3>{city} - {country}</h3>
-    }
-
-    return place;
+    return <h3>{city} - {country}</h3>
 }
 
 export default placeFormat;

@@ -2,12 +2,11 @@ import React from 'react';
 import placeFormat from '../services/placeFormat';
 
 const Info = ({ weather, opt }) => {
-    const place = placeFormat(weather);
-
     let temp = (opt === 'C') ? weather.tempC : weather.tempF;
     let feelsLike = (opt === 'C') ? weather.feelsLikeC : weather.feelsLikeF;
 
     if(weather.city) {
+        const place = placeFormat(weather);
         return (
             <div className="info">
                 <div className="place-date">

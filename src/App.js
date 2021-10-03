@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <Title/>
-      <Input handleSubmit={getWeather} handleType={changeTempType} tempType={tempType}/>
+      <Input handleSubmit={(e) =>getWeather(e)} handleType={() => changeTempType()} tempType={tempType}/>
       <Info weather={report} opt={tempType}/>
       <Footer/>
     </div>
