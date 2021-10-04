@@ -1,4 +1,4 @@
-const placeFormat = ({city, country}) => {
+const placeFormat = ({ city, country }) => {
     if (country.length >= 14) {
         let matches = country.replace(' of ', ' ').match(/\b(\w)/g);
         let acronym = matches.join('').toUpperCase();

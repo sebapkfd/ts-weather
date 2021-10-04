@@ -15,13 +15,8 @@ function App() {
   }
 
   const getWeather = async (e) => {
-    try {
       let newReport = await getData(e);
-      setReport(newReport)
-    }
-    catch (error) {
-      console.log(error);
-    }
+      setReport(newReport);
   }
 
   return (
