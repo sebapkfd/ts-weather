@@ -10,13 +10,11 @@ function App() {
   const [report, setReport] = useState({});
   const [tempType, setTempType] = useState('C');
 
-  const changeTempType = () => {
-    (tempType === 'C') ? setTempType('F') : setTempType ('C');
-  }
+  const changeTempType = () => (tempType === 'C') ? setTempType('F') : setTempType ('C');
 
   const getWeather = async (e) => {
-      let newReport = await getData(e);
-      setReport(newReport);
+    let newReport = await getData(e);
+    setReport(newReport);
   }
 
   return (

@@ -4,7 +4,7 @@ const Input = ({ handleSubmit, handleType, tempType }) => {
 
     const submitLocation = (e) => {
         e.preventDefault();
-        handleSubmit(e);
+        handleSubmit(e.target.location.value);
     }
 
     return (
@@ -14,6 +14,7 @@ const Input = ({ handleSubmit, handleType, tempType }) => {
                     type="text"
                     name="location"
                     placeholder="Search"
+                    required
                 />
             </form>
             <button onClick={() => handleType()}>

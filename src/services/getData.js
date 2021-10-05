@@ -1,7 +1,6 @@
 import dateFormat from './dateFormat';
 
-const getData = async (e) => {
-    const location = e.target.location.value;
+const getData = async (location) => {
     try {
         const response = await fetch(
             `https://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${location}`, 
