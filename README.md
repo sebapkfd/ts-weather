@@ -6,12 +6,12 @@ Small project, built for assignment as part of the curriculum for [The Odin Proj
 
 ### Built with: 
 * JavaScript
+* React
 * CSS
 * HTML
 * Git
 * Npm
 * [Weather API](https://www.weatherapi.com/)
-* [Create React App](https://github.com/facebook/create-react-app)
 
 In the project directory, you can run:
 
