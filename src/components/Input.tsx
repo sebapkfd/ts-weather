@@ -1,10 +1,16 @@
 import React from 'react';
 
-const Input = ({ handleSubmit, handleType, tempType }) => {
+interface Props {
+    handleSubmit: (place: string) => void,
+    handleScale: () => void,
+    tempType: string
+}
 
-    const submitLocation = (e) => {
+const Input = ({ handleSubmit, handleScale, tempType }: Props) => {
+
+    const submitLocation = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        handleSubmit(e.target.location.value);
+        handleSubmit(e.currentTarget.location.value);
     }
 
     return (
@@ -13,11 +19,12 @@ const Input = ({ handleSubmit, handleType, tempType }) => {
                 <input
                     type="text"
                     name="location"
+                    id='location'
                     placeholder="Search"
                     required
                 />
             </form>
-            <button onClick={() => handleType()}>
+            <button onClick={() => handleScale()}>
                 {tempType}
             </button>
         </div>

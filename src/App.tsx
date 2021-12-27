@@ -12,15 +12,17 @@ function App() {
 
   const changeTempType = () => (tempType === 'C') ? setTempType('F') : setTempType ('C');
 
-  const getWeather = async (e) => {
+  const getWeather = async (e: string) => {
     let newReport = await getData(e);
-    setReport(newReport);
+    if (!('error' in newReport)) {
+      setReport(newReport);
+    }
   }
 
   return (
     <div className="App">
       <Title/>
-      <Input handleSubmit={(e) =>getWeather(e)} handleType={() => changeTempType()} tempType={tempType}/>
+      <Input handleSubmit={(e) =>getWeather(e)} handleScale={() => changeTempType()} tempType={tempType}/>
       <Info weather={report} opt={tempType}/>
       <Footer/>
     </div>

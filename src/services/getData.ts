@@ -1,6 +1,10 @@
 import dateFormat from './dateFormat';
 
-const getData = async (location) => {
+interface weather {
+    [key: string]: string
+}
+
+const getData = async (location: string): Promise<weather> => {
     try {
         const response = await fetch(
             `https://api.weatherapi.com/v1/current.json?key=a5f5d927bbc64246a51205628200112&q=${location}`, 
@@ -24,7 +28,7 @@ const getData = async (location) => {
         return weather;
     }
     catch (error) {
-        return error;
+        return { error: 'No Data' }
     }
 }
 
